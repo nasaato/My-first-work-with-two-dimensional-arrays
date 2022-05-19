@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main() {
+    int arr[8][8], n, t = 0, summ = 0;
+    printf("Enter the matrix: ");
+    for(int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j++){
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    printf("\n");
+    printf("An array element when [i = j]: ");
+    for(int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j++){
+            if(i == j){
+                printf("%d ", arr[i][j]);}
+        }
+    }
+    printf("\n");
+    for(int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j++){
+            if(arr[i][j] < 0){
+                for(t = 0; t < 8; t++){
+                    arr[i][t] += summ;
+                    summ = arr[i][t]; }
+                printf("\nSuum the array[%d]: %d", i, summ);
+                summ = 0;
+            }
+        }
+    }
+    return 0;
+}
